@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sk Saifur Rahaman | Portfolio</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0a0a1a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Gradients */
+        .bg-glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+            filter: blur(150px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: floatGlow 10s infinite alternate ease-in-out;
+        }
+
+        .bg-glow-2 {
+            position: fixed;
+            bottom: 10%;
+            right: 5%;
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #7f00ff, #e100ff);
+            filter: blur(160px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: floatGlow 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatGlow {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(10, 10, 26, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00f2fe;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero h3 {
+            font-size: 1.2rem;
+            color: #00f2fe;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #aaa;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            color: #000;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.8);
+        }
+
+        /* Card Sections */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: #00f2fe;
+            bottom: -5px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #00f2fe;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Mobile View */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+
+        /* Private workspace / authentication */
+        .nav-actions { display:flex; align-items:center; gap:12px; }
+        .nav-login { border:1px solid rgba(0,242,254,.65); color:#00f2fe; background:transparent; padding:9px 18px; border-radius:24px; cursor:pointer; font-weight:600; }
+        .nav-login:hover { background:rgba(0,242,254,.12); }
+        .workspace { display:none; min-height:100vh; padding:120px 7% 70px; }
+        .workspace.active { display:block; }
+        .workspace-head { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:28px; }
+        .workspace-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(260px,340px); gap:22px; align-items:start; }
+        .workspace-card { background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:24px; margin-bottom:18px; backdrop-filter:blur(12px); }
+        .field { width:100%; padding:13px 14px; margin:8px 0 14px; border:1px solid rgba(255,255,255,.16); border-radius:10px; background:#11152b; color:#fff; outline:none; }
+        .field:focus { border-color:#00f2fe; }
+        .field-label { color:#ccc; font-size:.9rem; }
+        .primary-btn { border:0; border-radius:10px; padding:12px 18px; cursor:pointer; font-weight:700; background:linear-gradient(45deg,#00f2fe,#4facfe); color:#07101a; }
+        .secondary-btn { border:1px solid rgba(255,255,255,.2); border-radius:10px; padding:10px 15px; cursor:pointer; color:#fff; background:rgba(255,255,255,.06); }
+        .auth-wrap { display:none; min-height:100vh; padding:125px 20px 60px; align-items:center; justify-content:center; }
+        .auth-wrap.active { display:flex; }
+        .auth-card { width:100%; max-width:440px; padding:32px; border-radius:22px; background:rgba(15,20,42,.94); border:1px solid rgba(255,255,255,.14); box-shadow:0 20px 80px rgba(0,0,0,.35); }
+        .auth-card h2 { margin-bottom:8px; }
+        .muted { color:#aaa; font-size:.9rem; }
+        .message { font-size:.9rem; margin:10px 0 14px; min-height:20px; color:#00f2fe; }
+        .task-row { display:flex; align-items:flex-start; gap:12px; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.1); }
+        .task-row:last-child { border-bottom:0; }
+        .task-row .task-text { flex:1; overflow-wrap:anywhere; }
+        .task-row.done .task-text { color:#888; text-decoration:line-through; }
+        .task-actions { display:flex; gap:7px; }
+        .small-btn { padding:7px 10px; border-radius:8px; border:1px solid rgba(255,255,255,.18); background:transparent; color:#fff; cursor:pointer; }
+        .danger { color:#ff8c9a; }
+        .setup-note { background:rgba(255,190,70,.08); border:1px solid rgba(255,190,70,.3); color:#f4d7a0; border-radius:12px; padding:14px; margin-bottom:20px; font-size:.9rem; }
+        @media(max-width:800px) { .workspace-grid { grid-template-columns:1fr; } nav { padding:16px 5%; } .nav-actions { gap:6px; } .nav-login { padding:8px 12px; } .auth-card { padding:24px; } }
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">SAIFUR.</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="nav-login" id="openWorkspaceBtn" type="button">Personal Workspace <i class="fas fa-lock"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h3>Hi, I am</h3>
+        <h1>SK SAIFUR RAHAMAN</h1>
+        <p>B.Tech Student in Electrical and Computer Engineering. Passionate about modern technology, web development, and engineering solutions.</p>
+        <a href="#contact" class="btn">Get In Touch</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="glass-card">
+            <p>I am an engineering student deeply interested in combining hardware concepts with modern software technology. Constantly learning and building projects to solve real-world problems.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="glass-card">
+            <h3 style="color: #00f2fe; margin-bottom: 5px;">B.Tech in Electrical and Computer Engineering</h3>
+            <p style="font-size: 0.95rem; color: #ccc;">Maulana Abul Kalam Azad University of Technology (MAKAUT)</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-grid">
+            <a href="mailto:saifurrahaman.me@gmail.com" class="glass-card contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4>Email</h4>
+                    <p style="font-size: 0.85rem; color: #aaa;">saifurrahaman.me@gmail.com</p>
+                </div>
+            </a>
+
+            <a href="tel:8597397756" class="glass-card contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h4>Phone</h4>
+                    <p style="font-size: 0.85rem; color: #aaa;">+91 8597397756</p>
+                </div>
+            </a>
+
+            <a href="https://instagram.com/jamesrahaman.me" target="_blank" rel="noopener noreferrer" class="glass-card contact-item">
+                <i class="fab fa-instagram"></i>
+                <div>
+                    <h4>Instagram</h4>
+                    <p style="font-size: 0.85rem; color: #aaa;">@jamesrahaman.me</p>
+                </div>
+            </a>
+            <a href="https://facebook.com/jamesrahaman.me" target="_blank" rel="noopener noreferrer" class="glass-card contact-item">
+                <i class="fab fa-facebook"></i>
+                <div>
+                    <h4>Facebook</h4>
+                    <p style="font-size: 0.85rem; color: #aaa;">@jamesrahaman.me</p>
+                </div>
+            </a>
+            <a href="https://github.com/saifur-X" target="_blank" rel="noopener noreferrer" class="glass-card contact-item">
+                <i class="fab fa-github"></i>
+                <div>
+                    <h4>GitHub</h4>
+                    <p style="font-size: 0.85rem; color: #aaa;">@saifur-X</p>
+                </div>
+            </a>
+            <a href="https://x.com/SaifurrahamanMe" target="_blank" rel="noopener noreferrer" class="glass-card contact-item">
+                <i class="fab fa-x"></i>
+                <div>
+                    <h4>X</h4>
+                    <p style="font-size: 0.85rem; color: #aaa;">@SaifurrahamanMe</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Login / sign-up: private area is shown only after Supabase authentication -->
+    <main id="authView" class="auth-wrap">
+        <div class="auth-card">
+            <p style="color:#00f2fe;font-weight:600;margin-bottom:10px;"><i class="fas fa-shield-halved"></i> PRIVATE WORKSPACE</p>
+            <h2 id="authHeading">Login to your account</h2>
+            <p class="muted" id="authSubheading">Sign in to access your personal tasks and notes.</p>
+            <form id="authForm">
+                <label class="field-label" for="authEmail">Email address</label>
+                <input class="field" id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+                <label class="field-label" for="authPassword">Password</label>
+                <input class="field" id="authPassword" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required>
+                <button class="primary-btn" id="authSubmit" type="submit" style="width:100%;margin-top:5px;">Login</button>
+            </form>
+            <p class="message" id="authMessage" role="status"></p>
+            <p class="muted" style="text-align:center;"><span id="authSwitchText">New here?</span>
+                <a href="#" id="authSwitch" style="color:#00f2fe;">Create an account</a>
+            </p>
+            <button class="secondary-btn" id="backToSiteBtn" type="button" style="width:100%;margin-top:16px;">Back to portfolio</button>
+        </div>
+    </main>
+
+    <!-- Authenticated personal workspace -->
+    <main id="workspaceView" class="workspace">
+        <div class="workspace-head">
+            <div>
+                <p style="color:#00f2fe;font-weight:600;">YOUR PRIVATE SPACE</p>
+                <h1 style="font-size:clamp(1.8rem,4vw,2.7rem);margin:7px 0;">Personal Workspace</h1>
+                <p class="muted">Keep your personal tasks organised in one place.</p>
+            </div>
+            <button class="secondary-btn" id="logoutBtn" type="button"><i class="fas fa-right-from-bracket"></i> Logout</button>
+        </div>
+
+        <div id="supabaseSetupWarning" class="setup-note" style="display:none;">
+            Supabase is not configured yet. Add your Supabase Project URL and publishable/anon key in the configuration section at the bottom of this file, then create the database table using the included SQL setup instructions.
+        </div>
+
+        <div class="workspace-grid">
+            <section class="workspace-card" style="padding:24px;">
+                <h2 style="margin-bottom:6px;">My Tasks</h2>
+                <p class="muted" style="margin-bottom:18px;">Tasks are saved to your private Supabase account.</p>
+                <form id="taskForm">
+                    <label class="field-label" for="taskTitle">Task title</label>
+                    <input class="field" id="taskTitle" maxlength="180" placeholder="e.g. Finish project report" required>
+                    <label class="field-label" for="taskNotes">Notes (optional)</label>
+                    <textarea class="field" id="taskNotes" rows="3" maxlength="3000" placeholder="Add details..."></textarea>
+                    <button class="primary-btn" type="submit"><i class="fas fa-plus"></i> Add task</button>
+                </form>
+                <p id="taskMessage" class="message" role="status"></p>
+                <div id="taskList"><p class="muted">Login and configure Supabase to load your tasks.</p></div>
+            </section>
+
+            <aside>
+                <div class="workspace-card">
+                    <h3><i class="fas fa-user-lock" style="color:#00f2fe;"></i> Account</h3>
+                    <p class="muted" style="margin:10px 0 5px;">Signed in as</p>
+                    <p id="currentUserEmail" style="overflow-wrap:anywhere;">—</p>
+                </div>
+                <div class="workspace-card">
+                    <h3><i class="fas fa-lightbulb" style="color:#00f2fe;"></i> What you can do</h3>
+                    <ul style="color:#bbb;padding-left:20px;line-height:2;margin-top:10px;">
+                        <li>Create personal tasks</li>
+                        <li>Add notes to each task</li>
+                        <li>Mark tasks complete</li>
+                        <li>Delete tasks</li>
+                        <li>Access from another device after login</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Sk Saifur Rahaman. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+    /*
+      SUPABASE SETUP:
+      1) Create a project at https://supabase.com/
+      2) Copy Project URL and the publishable/anon key from Project Settings > API.
+      3) Paste them below. Never put a service_role/secret key in browser code.
+      4) Run the SQL shown after this script in Supabase SQL Editor.
+    */
+    const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
+    const SUPABASE_ANON_KEY = "YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY";
+
+    const authView = document.getElementById("authView");
+    const workspaceView = document.getElementById("workspaceView");
+    const authForm = document.getElementById("authForm");
+    const authMessage = document.getElementById("authMessage");
+    const taskMessage = document.getElementById("taskMessage");
+    const taskList = document.getElementById("taskList");
+    const authSubmit = document.getElementById("authSubmit");
+    let isSignUp = false;
+    let supabaseClient = null;
+    let currentUser = null;
+
+    function supabaseReady() {
+      return SUPABASE_URL.startsWith("https://") &&
+        !SUPABASE_URL.includes("YOUR_SUPABASE") &&
+        SUPABASE_ANON_KEY.length > 20 &&
+        !SUPABASE_ANON_KEY.includes("YOUR_SUPABASE");
+    }
+
+    if (supabaseReady() && window.supabase) {
+      supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    }
+
+    function showView(view) {
+      document.querySelectorAll("body > section, body > footer").forEach(el => el.style.display = "");
+      authView.classList.remove("active");
+      workspaceView.classList.remove("active");
+      document.querySelectorAll("body > nav").forEach(el => el.style.display = "");
+      if (view === "auth") {
+        document.querySelectorAll("body > section").forEach(el => el.style.display = "none");
+        document.querySelector("body > footer").style.display = "none";
+        authView.classList.add("active");
+      } else if (view === "workspace") {
+        document.querySelectorAll("body > section").forEach(el => el.style.display = "none");
+        document.querySelector("body > footer").style.display = "none";
+        workspaceView.classList.add("active");
+      }
+    }
+
+    function openAuth() {
+      showView("auth");
+      authMessage.textContent = "";
+      document.getElementById("authHeading").textContent = isSignUp ? "Create your account" : "Login to your account";
+      document.getElementById("authSubheading").textContent = isSignUp ? "Create a private account for your personal workspace." : "Sign in to access your personal tasks and notes.";
+      authSubmit.textContent = isSignUp ? "Create account" : "Login";
+      document.getElementById("authSwitchText").textContent = isSignUp ? "Already have an account?" : "New here?";
+      document.getElementById("authSwitch").textContent = isSignUp ? "Login" : "Create an account";
+      document.getElementById("authPassword").autocomplete = isSignUp ? "new-password" : "current-password";
+      if (!supabaseClient) {
+        authMessage.textContent = "Setup required: add your Supabase URL and publishable/anon key in this file first.";
+      }
+    }
+
+    document.getElementById("openWorkspaceBtn").addEventListener("click", async () => {
+      if (supabaseClient) {
+        const { data } = await supabaseClient.auth.getSession();
+        if (data.session) {
+          currentUser = data.session.user;
+          await showWorkspace();
+          return;
+        }
+      }
+      openAuth();
+    });
+    document.getElementById("backToSiteBtn").addEventListener("click", () => showView("site"));
+    document.getElementById("authSwitch").addEventListener("click", e => {
+      e.preventDefault();
+      isSignUp = !isSignUp;
+      openAuth();
+    });
+
+    authForm.addEventListener("submit", async e => {
+      e.preventDefault();
+      if (!supabaseClient) {
+        authMessage.textContent = "Supabase setup incomplete. Enter your project URL and publishable/anon key in the script.";
+        return;
+      }
+      const email = document.getElementById("authEmail").value.trim();
+      const password = document.getElementById("authPassword").value;
+      authSubmit.disabled = true;
+      authSubmit.textContent = "Please wait...";
+      authMessage.textContent = "";
+      try {
+        const result = isSignUp
+          ? await supabaseClient.auth.signUp({ email, password })
+          : await supabaseClient.auth.signInWithPassword({ email, password });
+        if (result.error) throw result.error;
+        if (isSignUp && !result.data.session) {
+          authMessage.textContent = "Account created. Check your email to confirm it, then login.";
+        } else {
+          currentUser = result.data.user || result.data.session?.user;
+          await showWorkspace();
+        }
+      } catch (err) {
+        authMessage.textContent = err.message || "Authentication failed. Please try again.";
+      } finally {
+        authSubmit.disabled = false;
+        authSubmit.textContent = isSignUp ? "Create account" : "Login";
+      }
+    });
+
+    async function showWorkspace() {
+      if (!currentUser && supabaseClient) {
+        const { data } = await supabaseClient.auth.getUser();
+        currentUser = data.user;
+      }
+      if (!currentUser) { openAuth(); return; }
+      document.getElementById("currentUserEmail").textContent = currentUser.email || "Signed in";
+      showView("workspace");
+      document.getElementById("supabaseSetupWarning").style.display = supabaseClient ? "none" : "block";
+      await loadTasks();
+    }
+
+    document.getElementById("logoutBtn").addEventListener("click", async () => {
+      if (supabaseClient) await supabaseClient.auth.signOut();
+      currentUser = null;
+      showView("site");
+    });
+
+    async function loadTasks() {
+      if (!supabaseClient || !currentUser) {
+        taskList.innerHTML = '<p class="muted">Configure Supabase and sign in to save/load tasks.</p>';
+        return;
+      }
+      taskList.innerHTML = '<p class="muted">Loading tasks...</p>';
+      const { data, error } = await supabaseClient.from("personal_tasks")
+        .select("id,title,notes,is_done,created_at")
+        .eq("user_id", currentUser.id)
+        .order("created_at", { ascending: false });
+      if (error) {
+        taskList.innerHTML = '<p class="muted">Could not load tasks. Make sure you created the personal_tasks table and enabled the provided RLS policy.</p>';
+        taskMessage.textContent = error.message;
+        return;
+      }
+      taskMessage.textContent = "";
+      if (!data.length) {
+        taskList.innerHTML = '<p class="muted">No tasks yet. Add your first task above.</p>';
+        return;
+      }
+      taskList.replaceChildren();
+      data.forEach(task => {
+        const row = document.createElement("div");
+        row.className = "task-row" + (task.is_done ? " done" : "");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = task.is_done;
+        checkbox.setAttribute("aria-label", "Mark task complete");
+        checkbox.addEventListener("change", () => updateTask(task.id, { is_done: checkbox.checked }));
+        const body = document.createElement("div");
+        body.className = "task-text";
+        const title = document.createElement("strong");
+        title.textContent = task.title;
+        const notes = document.createElement("p");
+        notes.className = "muted";
+        notes.style.whiteSpace = "pre-wrap";
+        notes.style.marginTop = "5px";
+        notes.textContent = task.notes || "";
+        body.append(title, notes);
+        const actions = document.createElement("div");
+        actions.className = "task-actions";
+        const del = document.createElement("button");
+        del.className = "small-btn danger";
+        del.type = "button";
+        del.textContent = "Delete";
+        del.addEventListener("click", () => deleteTask(task.id));
+        actions.append(del);
+        row.append(checkbox, body, actions);
+        taskList.append(row);
+      });
+    }
+
+    document.getElementById("taskForm").addEventListener("submit", async e => {
+      e.preventDefault();
+      if (!supabaseClient || !currentUser) {
+        taskMessage.textContent = "Please configure Supabase and login first.";
+        return;
+      }
+      const title = document.getElementById("taskTitle").value.trim();
+      const notes = document.getElementById("taskNotes").value.trim();
+      if (!title) return;
+      const { error } = await supabaseClient.from("personal_tasks").insert({
+        user_id: currentUser.id, title, notes, is_done: false
+      });
+      if (error) {
+        taskMessage.textContent = error.message;
+        return;
+      }
+      e.target.reset();
+      taskMessage.textContent = "Task saved.";
+      await loadTasks();
+    });
+
+    async function updateTask(id, changes) {
+      const { error } = await supabaseClient.from("personal_tasks").update(changes)
+        .eq("id", id).eq("user_id", currentUser.id);
+      if (error) taskMessage.textContent = error.message;
+      await loadTasks();
+    }
+
+    async function deleteTask(id) {
+      if (!confirm("Delete this task?")) return;
+      const { error } = await supabaseClient.from("personal_tasks").delete()
+        .eq("id", id).eq("user_id", currentUser.id);
+      if (error) taskMessage.textContent = error.message;
+      else taskMessage.textContent = "Task deleted.";
+      await loadTasks();
+    }
+
+    // Restore an existing authenticated session when the page opens.
+    async function restoreSession() {
+      if (!supabaseClient) return;
+      const { data } = await supabaseClient.auth.getSession();
+      if (data.session) {
+        currentUser = data.session.user;
+        // Keep the public portfolio visible until the user opens the private workspace.
+      }
+      supabaseClient.auth.onAuthStateChange((_event, session) => {
+        currentUser = session?.user || null;
+      });
+    }
+    restoreSession();
+    </script>
+
+    <!-- Run this SQL once in Supabase SQL Editor:
+    create table public.personal_tasks (
+      id bigint generated by default as identity primary key,
+      user_id uuid not null references auth.users(id) on delete cascade,
+      title text not null check (char_length(title) <= 180),
+      notes text not null default '',
+      is_done boolean not null default false,
+      created_at timestamptz not null default now()
+    );
+
+    alter table public.personal_tasks enable row level security;
+
+    create policy "Users can view their own tasks"
+      on public.personal_tasks for select to authenticated
+      using (auth.uid() = user_id);
+
+    create policy "Users can add their own tasks"
+      on public.personal_tasks for insert to authenticated
+      with check (auth.uid() = user_id);
+
+    create policy "Users can update their own tasks"
+      on public.personal_tasks for update to authenticated
+      using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+    create policy "Users can delete their own tasks"
+      on public.personal_tasks for delete to authenticated
+      using (auth.uid() = user_id);
+    -->
+
+</body>
+</html>
